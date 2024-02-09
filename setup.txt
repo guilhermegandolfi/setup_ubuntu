@@ -90,3 +90,7 @@ sudo apt install git curl build-essential -y
 sudo apt install gcc make default-libmysqlclient-dev libssl-dev -y
 sudo apt install python3.10-full python3.10-dev -y
 sudo apt install python3-pip -y
+
+-- git 
+git config --global user.name "Guilherme Gandolfi"
+git config --global user.email "guilherme_gandolfi@hotmail.com"
