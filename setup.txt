@@ -31,6 +31,17 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 --------------------------------------------------------------------------------
+-- docker compose
+--------------------------------------------------------------------------------
+
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+
+--------------------------------------------------------------------------------
 -- terraform
 --------------------------------------------------------------------------------
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
@@ -51,3 +62,31 @@ sudo apt update
 
 sudo apt-get install terraform -y
 
+--------------------------------------------------------------------------------
+-- terminal
+--------------------------------------------------------------------------------
+
+sudo apt install zsh -y
+chsh -s /bin/zsh
+
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+
+ZSH_THEME="blinks"
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+---------------------------------------------------------------------------------
+-- python
+---------------------------------------------------------------------------------
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install git curl build-essential -y
+sudo apt install gcc make default-libmysqlclient-dev libssl-dev -y
+sudo apt install python3.10-full python3.10-dev -y
+sudo apt install python3-pip -y
